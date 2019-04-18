@@ -104,8 +104,10 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.ngOnInit = function () {
     };
     AppComponent.prototype.create = function () {
-        this.todosList.push(this.newTodo);
-        this.newTodo = new _models_todo_model__WEBPACK_IMPORTED_MODULE_1__["default"]();
+        if (this.newTodo.task) {
+            this.todosList.push(this.newTodo);
+            this.newTodo = new _models_todo_model__WEBPACK_IMPORTED_MODULE_1__["default"]();
+        }
     };
     AppComponent.prototype.editTodo = function (todo) {
         console.log(todo);

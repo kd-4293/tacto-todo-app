@@ -22,8 +22,11 @@ export class AppComponent implements OnInit {
 
 
   create() {
-        this.todosList.push(this.newTodo);
-        this.newTodo = new ToDo()
+        if(this.newTodo.task){
+          this.todosList.push(this.newTodo);
+          this.newTodo = new ToDo()
+        }
+        
   }
 
   editTodo(todo: ToDo) {
